@@ -1,7 +1,7 @@
 const defaultOpts = {
   renderComponent: null,
   App: null,
-  element: null, 
+  root: null, 
 }
 
 export default function singleSpaGlimmer(userOpts) {
@@ -40,7 +40,10 @@ function mount(opts) {
     .resolve()
   .then(() => {
     console.log('mount');
-    const { renderComponent, App, element } = opts;
+    globalThis[Symbol.for('GLIMMER_VALIDATOR_REGISTRATION')] = false;
+    const { renderComponent, App, root } = opts;
+    const element = document.getElementById(root);
+    console.log(element);
     renderComponent(App, element);
     });
 }

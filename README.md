@@ -1,4 +1,4 @@
-# glimmer-snowpack
+# planets micro-frontend
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 

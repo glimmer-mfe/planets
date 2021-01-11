@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -6,16 +5,13 @@ module.exports = {
   mode: process.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './src/index.js',
   output: {
-    filename: 'people.js',
+    filename: 'planets.js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'system'
   },
   devtool:'inline-source-map',
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Glimmer Navbar'
-    })
   ],
   module: {
     rules: [
